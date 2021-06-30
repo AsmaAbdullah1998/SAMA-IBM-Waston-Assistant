@@ -20,7 +20,6 @@
     
 
     
-    
     <div class = "slideContainer">
         
         
@@ -104,6 +103,19 @@
 
     
     </div>
+    <script>
+      window.watsonAssistantChatOptions = {
+          integrationID: "ac0ddd82-7fb4-48bd-a805-d4a4ce5fd5db", // The ID of this integration.
+          region: "us-south", // The region your integration is hosted in.
+          serviceInstanceID: "3209c6c8-7a60-4131-9ea4-2df09a67a446", // The ID of your service instance.
+          onLoad: function(instance) { instance.render(); }
+        };
+      setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+        document.head.appendChild(t);
+      });
+    </script>
 
 
     
@@ -114,19 +126,7 @@
    
     
 </body>
-<script>
-  window.watsonAssistantChatOptions = {
-      integrationID: "ac0ddd82-7fb4-48bd-a805-d4a4ce5fd5db", // The ID of this integration.
-      region: "us-south", // The region your integration is hosted in.
-      serviceInstanceID: "3209c6c8-7a60-4131-9ea4-2df09a67a446", // The ID of your service instance.
-      onLoad: function(instance) { instance.render(); }
-    };
-  setTimeout(function(){
-    const t=document.createElement('script');
-    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
-    document.head.appendChild(t);
-  });
-</script>
+
 
 
 
