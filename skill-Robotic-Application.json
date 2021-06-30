@@ -1,6 +1,21 @@
 {
   "intents": [
     {
+      "intent": "bye",
+      "examples": [
+        {
+          "text": "bye"
+        },
+        {
+          "text": "bye bye"
+        },
+        {
+          "text": "good bye"
+        }
+      ],
+      "description": ""
+    },
+    {
       "intent": "Intersted",
       "examples": [
         {
@@ -64,10 +79,40 @@
           "text": "yes"
         },
         {
+          "text": "yes I'm"
+        },
+        {
           "text": "yes please"
         },
         {
           "text": "yup"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "thanks",
+      "examples": [
+        {
+          "text": "thanks"
+        },
+        {
+          "text": "thanks girl"
+        },
+        {
+          "text": "thanks man"
+        },
+        {
+          "text": "thank you"
+        },
+        {
+          "text": "thank you a lot"
+        },
+        {
+          "text": "thank you so much"
+        },
+        {
+          "text": "thank you very much"
         }
       ],
       "description": ""
@@ -173,7 +218,7 @@
       },
       "conditions": "anything_else",
       "dialog_node": "Anything else",
-      "previous_sibling": "node_8_1624974329454",
+      "previous_sibling": "node_3_1625027696665",
       "disambiguation_opt_out": true
     },
     {
@@ -218,6 +263,31 @@
     },
     {
       "type": "standard",
+      "title": "bye",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "bye! nice to see you here!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "Welcome"
+      },
+      "conditions": "#bye",
+      "dialog_node": "node_3_1625027696665",
+      "previous_sibling": "node_5_1625027969274"
+    },
+    {
+      "type": "standard",
       "title": "give info",
       "parent": "node_1_1624948744321",
       "metadata": {
@@ -248,6 +318,26 @@
       "conditions": "@YES_OR_NO:no",
       "dialog_node": "node_4_1624976699758",
       "previous_sibling": "node_6_1624976070918"
+    },
+    {
+      "type": "standard",
+      "title": "thanks ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Welcome! Anytime"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#thanks",
+      "dialog_node": "node_5_1625027969274",
+      "previous_sibling": "node_8_1624974329454"
     },
     {
       "type": "standard",
